@@ -1,0 +1,45 @@
+esp_mgos_init2       my-app 1.0 (20180703-133400/master@a593f6bc+)<\n>
+esp_mgos_init2       Mongoose OS 2.0 (20180703-133400/2.0@bac8bbfa+)<\n>
+esp_mgos_init2       CPU: ESP8266EX, 160 MHz, RAM: 52576 total, 51412 free<\n>
+esp_mgos_init2       SDK 2.2.1(05c8012); flash: 2M<\n>
+esp_print_reset_info Reset cause: 6 (sys reset)<\n>
+mg_lwip_if_init      Mongoose 6.11, LwIP 1.4.1<\n>
+mg_ssl_if_init       mbed TLS 2.8.0<\n>
+mgos_vfs_dev_open    sysflash () -> 0x3ffef91c<\n>
+mgos_vfs_mount       Mount SPIFFS @ / (dev 0x3ffef91c, opts {"addr": 897024, "size": 131072}) -> 0x3ffef92c<\n>
+mgos_vfs_mount       /: size 113201, used: 20833, free: 92368<\n>
+mgos_sys_config_init MAC: A220A63063B5<\n>
+mgos_sys_config_init WDT: 30 seconds<\n>
+mgos_wifi_setup      WiFi mode: AP<\n>
+mgos_wifi_set_mode   WiFi mode: AP<\n>
+mode : softAP(a2:20:a6:30:63:b5)<\n>
+add if1<\n>
+dhcp server start:(ip:192.168.4.1,mask:255.255.255.0,gw:192.168.4.1)<\n>
+bcn 100<\n>
+mgos_wifi_dev_ap_set WiFi AP: SSID bliblablupp, channel 6<\n>
+bcn 0<\n>
+del if1<\n>
+usl<\n>
+add if1<\n>
+dhcp server start:(ip:192.168.4.1,mask:255.255.255.0,gw:192.168.4.1)<\n>
+bcn 100<\n>
+mgos_wifi_dev_ap_set WiFi AP IP: 192.168.4.1/255.255.255.0 gw 192.168.4.1, DHCP range 192.168.4.2 - 192.168.4.100<\n>
+mgos_http_server_ini HTTP server started on [80]<\n>
+mg_rpc_channel_uart  0x3fff0b8c UART0<\n>
+mgos_app_init        Hi there<\n>
+mgos_init            Init done, RAM: 52576 total, 46016 free, 46024 min free<\n>
+mongoose_poll        New heap free LWM: 45896<\n>
+add 1<\n>
+aid 1<\n>
+station: 38:37:8b:a2:8e:54 join, AID = 1<\n>
+station: 38:37:8b:a2:8e:54 leave, AID = 1<\n>
+rm 1<\n>
+mongoose_poll        New heap free LWM: 45768<\n>
+add 1<\n>
+aid 1<\n>
+station: 74:e5:f9:ef:53:03 join, AID = 1<\n>
+mongoose_poll        New heap free LWM: 44032<\n>
+mongoose_poll        New heap free LWM: 43976<\n>
+mgos_http_ev         0x3fff0e7c HTTP connection from 192.168.4.2:55989<\n>
+endpoint_handler     available heap: 44036<\n>
+mongoose_poll        New heap free LWM: 43680

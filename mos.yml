@@ -50,6 +50,28 @@ libs:
   - origin: https://github.com/mongoose-os-libs/rpc-service-config
   - origin: https://github.com/mongoose-os-libs/rpc-service-fs
   - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/http-server
+
+config_schema:
+  - ["wifi.ap.enable", true]
+  - ["wifi.ap.ssid", "bliblablupp"]
+  - ["wifi.ap.pass", ""]
+  - ["wifi.ap.hidden", false]
+  - ["wifi.ap.channel", 6]
+  - ["wifi.ap.max_connections", 2]
+  - ["wifi.ap.ip", "192.168.4.1"]
+  - ["wifi.ap.netmask", "255.255.255.0"]
+  - ["wifi.ap.gw", "192.168.4.1"]
+  - ["wifi.ap.dhcp_start", "192.168.4.2"]
+  - ["wifi.ap.dhcp_end", "192.168.4.100"]
+  - ["wifi.ap.keep_enabled", false]
+
+  - ["wifi.sta.enable", false]
+
+build_vars:
+  FS_SIZE: 131072
+  FLASH_SIZE: 2097152
 
 # Used by the mos tool to catch mos binaries incompatible with this file format
 manifest_version: 2017-09-29
