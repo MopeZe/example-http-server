@@ -10,12 +10,12 @@ to us AFTER connecting to the http server is around 1.3kB less. (we just use a d
 
 v1.26:
 ======
-mgos_http_ev         0x3fff0d34 HTTP connection from 192.168.4.2:54413
-endpoint_handler     available heap: 45268
+mgos_http_ev         0x3fff0d34 HTTP connection from 192.168.4.2:54413  
+endpoint_handler     available heap: 45268  
 
-v2.3
+v2.3:
 ======
-mgos_http_ev         0x3fff0ed4 HTTP connection from 192.168.4.2:54710<\n>
-endpoint_handler     available heap: 43948
+mgos_http_ev         0x3fff0ed4 HTTP connection from 192.168.4.2:54710   
+endpoint_handler     available heap: 43948  
 
 please see folder "logs" for detailled logs! The heap increase happens when switching from v1.26 to 2.0!
