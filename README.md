@@ -6,7 +6,7 @@ added libs: mongoose-os-libs/wifi, mongoose-os-libs/http-server
 
 ## Behaviour
 When we build this app with mongoose-os v2.3 versus mongoose-os v1.26 the heap available
-to us AFTER connecting to the http server is around 1.3kB less. (we just use a different mos tool (mos update 2.0/1.26) to build)
+to us AFTER connecting to the http server is around 1.3kB less. (we just use a different mos tool (mos update 2.3/1.26) to build)
 
 v1.26:
 ======
