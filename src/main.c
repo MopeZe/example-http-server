@@ -16,34 +16,47 @@
  */
 
 #include "mgos.h"
-#include "mgos_http_server.h"
+#include "mgos_utils.h"
+#include "mgos_timers.h"
+#include <user_interface.h>
 
-#define MAX_REPLY_LENGTH 100
+// #define MAX_REPLY_LENGTH 100
 
-static void endpoint_handler(struct mg_connection *nc, int ev, void *ev_data, void *user_data);
+static void goToSleepCallback(void *arg) {
+  (void)arg;
+  LOG(LL_INFO, ("Good night (system_deep_sleep)"));
+  system_deep_sleep_set_option(4);
+  system_deep_sleep(0);
+  //if you put mgos_msleep(200) it works.
+}
+
+// static void endpoint_handler(struct mg_connection *nc, int ev, void *ev_data, void *user_data);
 
 enum mgos_app_init_result mgos_app_init(void) {
 
-  mgos_register_http_endpoint("/getheap", endpoint_handler, NULL);
+  // mgos_register_http_endpoint("/getheap", endpoint_handler, NULL);
 
-  LOG(LL_INFO, ("Hi there"));
+  LOG(LL_INFO, ("Hi there, i want to sleep in 10 seconds"));
+  mgos_set_timer(10000, 0, goToSleepCallback, NULL);
   return MGOS_APP_INIT_SUCCESS;
 }
 
-static void endpoint_handler(struct mg_connection *nc, int ev, void *ev_data, void *user_data) {
-  (void)ev;
-  (void)ev_data;
-  (void)user_data;
+// static void endpoint_handler(struct mg_connection *nc, int ev, void *ev_data, void *user_data) {
+//   (void)ev;
+//   (void)ev_data;
+//   (void)user_data;
+//
+//   LOG(LL_INFO, "sleeping deep....");
 
-  LOG(LL_INFO, ("available heap: %u",mgos_get_free_heap_size()));
-
-  char reply[MAX_REPLY_LENGTH];
-  snprintf(reply,MAX_REPLY_LENGTH,"available heap: %u",mgos_get_free_heap_size());
-  mg_printf(nc,
-            "HTTP/1.1 200 OK\r\n"
-            "Content-Type: text/plain\r\n"
-            "Connection: close\r\n\r\n"
-            "Heap: %u\r\n",mgos_get_free_heap_size());
-  nc->flags |= MG_F_SEND_AND_CLOSE;
-  mg_send(nc, reply, strlen(reply));
-}
+  // LOG(LL_INFO, ("available heap: %u",mgos_get_free_heap_size()));
+  //
+  // char reply[MAX_REPLY_LENGTH];
+  // snprintf(reply,MAX_REPLY_LENGTH,"available heap: %u",mgos_get_free_heap_size());
+  // mg_printf(nc,
+  //           "HTTP/1.1 200 OK\r\n"
+  //           "Content-Type: text/plain\r\n"
+  //           "Connection: close\r\n\r\n"
+  //           "Heap: %u\r\n",mgos_get_free_heap_size());
+  // nc->flags |= MG_F_SEND_AND_CLOSE;
+  // mg_send(nc, reply, strlen(reply));
+// }

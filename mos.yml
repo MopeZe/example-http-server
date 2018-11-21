@@ -18,33 +18,6 @@ sources:
 filesystem:
   - fs
 
-# Custom configuration entries, settable via "device configuration"
-# Below is a custom firmware configuration example.
-# Uncomment and modify according to your needs:
-
-# config_schema:
-#  - ["my_app", "o", {title: "My app custom settings"}]
-#  - ["my_app.bool_value", "b", false, {title: "Some boolean value"}]
-#  - ["my_app.string_value", "s", "", {title: "Some string value"}]
-#  - ["my_app.int_value", "i", 123, {title: "Some integer value"}]
-
-# These settings get compiled into the C structure, and can be accessed
-# from the C code this way:
-#
-# printf("Hello from %s!\n", mgos_sys_config_get_device_id());
-#
-# Settings are cool: can be modified remotely without full firmware upgrade!
-#
-# To see all available compiled settings, buid the firmware and open
-# build/gen/mgos_config.h file.
-#
-# Also, in this config_schema section, you can override existing
-# settings that has been created by other libraries. For example, debug log
-# level is 2 by default. For this firmware we can override it to 3:
-#
-# config_schema:
-#  - ["debug.level", 3]
-
 libs:
   - origin: https://github.com/mongoose-os-libs/ca-bundle
   - origin: https://github.com/mongoose-os-libs/rpc-service-config
@@ -54,24 +27,15 @@ libs:
   - origin: https://github.com/mongoose-os-libs/http-server
 
 config_schema:
-  - ["wifi.ap.enable", true]
-  - ["wifi.ap.ssid", "bliblablupp"]
-  - ["wifi.ap.pass", ""]
-  - ["wifi.ap.hidden", false]
-  - ["wifi.ap.channel", 6]
-  - ["wifi.ap.max_connections", 2]
-  - ["wifi.ap.ip", "192.168.4.1"]
-  - ["wifi.ap.netmask", "255.255.255.0"]
-  - ["wifi.ap.gw", "192.168.4.1"]
-  - ["wifi.ap.dhcp_start", "192.168.4.2"]
-  - ["wifi.ap.dhcp_end", "192.168.4.100"]
-  - ["wifi.ap.keep_enabled", false]
+  - ["wifi.ap.enable", false]
 
-  - ["wifi.sta.enable", false]
+  - ["wifi.sta.enable", true]
+  - ["wifi.sta.ssid", "Bambam"]
+  - ["wifi.sta.pass", "andy4president"]
 
 build_vars:
   FS_SIZE: 131072
   FLASH_SIZE: 2097152
-
+  
 # Used by the mos tool to catch mos binaries incompatible with this file format
 manifest_version: 2017-09-29
